@@ -1,0 +1,19 @@
+.post {
+    margin-bottom: 40px;
+  }
+  
+  .post-title {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+  
+  .post-date {
+    font-size: 0.875rem;
+    margin-bottom: 16px;
+    color: #999;
+  }
+  
+  .post-content {
+    line-height: 1.6;
+  }
+  

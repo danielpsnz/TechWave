@@ -1,30 +1,35 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Sidebar from './components/Sidebar';
-import PostList from './components/PostList';
-import Post from './pages/Post';
-import Home from './pages/Home';
-import About from './pages/About';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Sidebar from './components/Sidebar/Sidebar';
+import PostList from './components/PostList/PostList';
+import PostPage from './pages/Post/PostPage';
+import Home from './pages/Home/HomePage';
+import About from './pages/About/AboutPage';
+
+import Particle from "./components/Particle";
 
 function App() {
   return (
+    <div>
     <div className="App">
       <Router>
         <Header />
         <main>
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/post/:id" component={Post} />
-            <Route path="/about" component={About} />
-          </Switch>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/post/:id" element={<PostPage />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
           <Sidebar />
         </main>
         <Footer />
       </Router>
+    </div>
+    <Particle />
     </div>
   );
 }
